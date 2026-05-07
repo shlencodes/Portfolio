@@ -336,7 +336,7 @@ if (threeCanvas && typeof THREE !== "undefined") {
     const rect = container.getBoundingClientRect();
     renderer.setSize(rect.width, rect.height, false);
     camera.aspect = rect.width / rect.height;
-    camera.updateProjectionMatrix();
+    camera.upadateProjectionMatrix();
   }
 
   function handlePointerMove(event) {
