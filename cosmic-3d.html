@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahez (Shlen) // 3D Portfolio Experience</title>
+  <meta name="description" content="An interactive 3D portfolio experience presenting the work, process, and direction of Shahez (Shlen)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="cosmic-3d.css" />
+</head>
+
+<body>
+  <canvas id="cosmosCanvas" aria-hidden="true"></canvas>
+
+  <header class="cosmo-nav">
+    <a href="index.html" class="cn-home">Back to Portfolio</a>
+    <a href="index.html#contact" class="cn-jump">Contact</a>
+  </header>
+
+  <div class="planet-ui" id="planetUi" aria-hidden="true">
+    <div class="planet-label" id="label-core">
+      <span class="pl-kicker mono">Core Profile</span>
+      <h2>Shahez (Shlen)</h2>
+      <p>India / Creative Editor / Systems-Driven Learner</p>
+    </div>
+
+    <div class="planet-label" id="label-edit">
+      <span class="pl-kicker mono">Creative Practice</span>
+      <h2>Editing and Storytelling</h2>
+      <p>Pacing, transitions, emotional timing, and visual clarity.</p>
+    </div>
+
+    <div class="planet-label" id="label-systems">
+      <span class="pl-kicker mono">Execution Systems</span>
+      <h2>Study, Fitness, and Technical Growth</h2>
+      <p>Structured routines that support consistent performance.</p>
+    </div>
+
+    <div class="planet-label" id="label-comms">
+      <span class="pl-kicker mono">Collaboration Node</span>
+      <h2>Let’s Work Together</h2>
+      <p>Email: notshlenhere@gmail.com / Instagram: @notshlen</p>
+    </div>
+
+    <div class="planet-label" id="label-orbit">
+      <span class="pl-kicker mono">Work Archive</span>
+      <h2>Creative Output + Discipline</h2>
+      <p>A unified workflow across editing, learning, and execution.</p>
+    </div>
+
+    <div class="planet-label" id="label-scout">
+      <span class="pl-kicker mono">Next Milestones</span>
+      <h2>Future Direction</h2>
+      <p>Expanded case studies, stronger client work, and deeper craft.</p>
+    </div>
+  </div>
+
+  <main class="story">
+    <section class="scroll-zone" id="zone-1">
+      <div class="zone-hint mono">SCROLL // START EXPERIENCE</div>
+    </section>
+    <section class="scroll-zone" id="zone-2"></section>
+    <section class="scroll-zone" id="zone-3"></section>
+    <section class="scroll-zone" id="zone-4"></section>
+    <section class="scroll-zone" id="zone-5"></section>
+    <section class="scroll-zone" id="zone-6"></section>
+    <section class="scroll-zone" id="zone-7"></section>
+    <section class="scroll-zone" id="zone-8"></section>
+  </main>
+
+  <div class="end-portal" id="endPortal">
+    <p class="mono">Experience Complete</p>
+    <h3>You reached the end of this 3D portfolio walkthrough.</h3>
+    <p>Return to the main site to review projects or connect directly.</p>
+    <div class="ep-actions">
+      <a href="index.html" class="ep-btn">Main Portfolio</a>
+      <a href="index.html#contact" class="ep-btn ghost">Get In Touch</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="cosmic-3d.js"></script>
+</body>
+
+</html>

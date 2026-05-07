@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #101010;
+  --bg-a: #1f2f63;
+  --bg-b: #121f46;
+  --text: #101010;
+  --muted: #1a2b4d;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Chakra Petch", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255, 188, 114, 0.35), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(116, 178, 255, 0.3), transparent 32%),
+    linear-gradient(180deg, var(--bg-a), var(--bg-b));
+  overflow-x: hidden;
+}
+
+#cosmosCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cosmo-nav {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.cn-home,
+.cn-jump {
+  pointer-events: auto;
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  background: linear-gradient(135deg, #ffe8bb, #f6ca87);
+  color: #111;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.65rem;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.42);
+}
+
+.cn-jump {
+  background: linear-gradient(135deg, #9ad0ff, #ffd89f);
+}
+
+.story {
+  position: relative;
+  z-index: 2;
+}
+
+.scroll-zone {
+  min-height: 110vh;
+}
+
+.zone-hint {
+  position: sticky;
+  top: 6.5rem;
+  width: max-content;
+  margin-inline: auto;
+  border: 2px solid #111;
+  background: linear-gradient(135deg, #84bfff, #f9b067);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+  color: #111;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.52rem;
+}
+
+.planet-ui {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.planet-label {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  max-width: min(36vw, 22rem);
+  min-width: 11rem;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.72);
+  padding: 0.2rem 0.25rem;
+  transform-origin: center;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  text-align: center;
+  filter: drop-shadow(0 0 10px rgba(255, 188, 114, 0.36)) drop-shadow(0 0 18px rgba(116, 178, 255, 0.28));
+}
+
+.pl-kicker {
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #ebf2ff;
+  font-size: 0.66rem;
+  text-shadow: 2px 2px 0 rgba(10, 14, 26, 0.92);
+}
+
+.planet-label h2 {
+  margin-top: 0.34rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.94rem, 1.4vw, 1.34rem);
+  text-transform: uppercase;
+  color: #fff5da;
+  text-shadow: 2px 2px 0 #101010, 0 0 18px rgba(255, 176, 88, 0.42), 0 0 24px rgba(112, 183, 255, 0.28);
+}
+
+.planet-label p {
+  margin-top: 0.4rem;
+  color: #ecf4ff;
+  font-size: clamp(0.78rem, 1vw, 0.98rem);
+  font-weight: 700;
+  text-shadow: 2px 2px 0 rgba(10, 14, 26, 0.92);
+}
+
+.end-portal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.88);
+  z-index: 60;
+  width: min(92vw, 34rem);
+  border: 3px solid #111;
+  background: linear-gradient(180deg, rgba(255, 242, 208, 0.98), rgba(246, 207, 145, 0.98));
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.45), 0 0 24px rgba(112, 178, 255, 0.35);
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.end-portal.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.end-portal h3 {
+  margin-top: 0.4rem;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  color: #fff5da;
+  text-shadow: 2px 2px 0 #111, 4px 4px 0 rgba(29, 54, 104, 0.35);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.end-portal p {
+  margin-top: 0.45rem;
+  color: #162849;
+  font-weight: 700;
+}
+
+.ep-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.ep-btn {
+  text-decoration: none;
+  border: 3px solid #111;
+  background: linear-gradient(135deg, #96cbff, #ffcf8a);
+  color: #111;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  padding: 0.45rem 0.62rem;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.ep-btn.ghost {
+  background: linear-gradient(135deg, #ffe6b8, #f7d49b);
+}
+
+@media (max-width: 900px) {
+  .planet-label {
+    width: min(56vw, 16rem);
+  }
+}
+
+@media (max-width: 680px) {
+  .planet-label {
+    width: min(74vw, 14rem);
+  }
+
+  .zone-hint {
+    top: 5.9rem;
+  }
+
+  .end-portal {
+    width: min(94vw, 23rem);
+  }
+}

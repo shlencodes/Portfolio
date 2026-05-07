@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="notshlen portfolio - creative edits, experiments, and personal projects by Shahez (Shlen)." />
+  <title>notshlen - Shahez / Shlen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="fut-cursor" id="futCursor" aria-hidden="true">
+    <div class="fc-orbit fc-orbit-a"></div>
+    <div class="fc-orbit fc-orbit-b"></div>
+    <div class="fc-star"></div>
+    <div class="fc-core"></div>
+    <div class="fc-spike fc-spike-n"></div>
+    <div class="fc-spike fc-spike-e"></div>
+    <div class="fc-spike fc-spike-s"></div>
+    <div class="fc-spike fc-spike-w"></div>
+  </div>
+
+  <div class="page-grid" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="page-halo page-halo-a" aria-hidden="true"></div>
+  <div class="page-halo page-halo-b" aria-hidden="true"></div>
+
+  <div class="progress-rail" aria-hidden="true">
+    <span class="mono">ORBIT</span>
+    <div class="progress-track">
+      <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-word-wrap">
+        <span class="logo-word">notshlen</span>
+        <span class="logo-spark-layer" id="logoSparkLayer" aria-hidden="true"></span>
+      </span>
+      <span class="logo-bracket">]</span>
+    </a>
+    <div class="nav-links">
+      <a href="#focus" class="nav-link"><span class="mono">01</span>Focus</a>
+      <a href="#work" class="nav-link"><span class="mono">02</span>Grind</a>
+      <a href="#about" class="nav-link"><span class="mono">03</span>Profile</a>
+      <a href="#contact" class="nav-link"><span class="mono">04</span>Comms</a>
+      <a href="cosmic-3d.html" class="nav-link nav-link-hot"><span class="mono">05</span>Cosmos?</a>
+    </div>
+    <div class="nav-badge">
+      <span class="nav-dot"></span>
+      <span class="mono">Online</span>
+    </div>
+  </nav>
+
+  <main id="siteMain">
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <p class="eyebrow mono">Space Log / India / Shlen</p>
+        <h1 class="hero-title">Making cool things, one project at a time.</h1>
+        <p class="hero-sub">
+          I am Shahez, known online as Shlen. This is my creative playground and portfolio where I share edits,
+          experiments, and the work I am building across content, storytelling, and code.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="cta-main">View My Work</a>
+          <a href="#contact" class="cta-ghost">Say Hi</a>
+          <a href="cosmic-3d.html" class="cta-portal">Explore Cosmos?</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric panel-lite">
+            <span class="metric-value mono" data-val="17">00</span>
+            <span class="metric-label mono">Age</span>
+          </div>
+          <div class="metric panel-lite">
+            <span class="metric-value mono" data-val="9">00</span>
+            <span class="metric-label mono">Roles</span>
+          </div>
+          <div class="metric panel-lite">
+            <span class="metric-value mono">INF</span>
+            <span class="metric-label mono">Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stage">
+        <div class="hero-3d-shell panel" id="hero3d">
+          <div class="panel-kicker mono">Creative System / Live</div>
+          <canvas id="three-canvas"></canvas>
+          <div class="panel-note mono">Move your pointer and scroll to explore</div>
+        </div>
+
+        <figure class="hero-poster panel">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
+            alt="Illustrated manga-style space panel with a moon, orbital paths, and a learning mission chart."
+            loading="eager" />
+          <figcaption class="mono">Visual Direction Board</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Current pursuits">
+      <div class="signal-track">
+        <span class="sig-chip">ID: SHLEN</span>
+        <span class="signal-dot">//</span>
+        <span class="sig-chip">ORIGIN: INDIA</span>
+        <span class="signal-dot">//</span>
+        <span class="sig-chip">AGE: 17</span>
+        <span class="signal-dot">//</span>
+        <span class="sig-chip">STATUS: MULTI-GRIND</span>
+        <span class="signal-dot">//</span>
+        <span class="sig-chip">MODE: LEARNING</span>
+        <span class="signal-dot">//</span>
+        <a href="cosmic-3d.html" class="sig-chip sig-chip-hot">OPEN COSMOS</a>
+        <span class="signal-dot">//</span>
+        <span>Video Editing</span>
+        <span class="signal-dot">/</span>
+        <span>JEE Prep</span>
+        <span class="signal-dot">/</span>
+        <span>Content Creation</span>
+        <span class="signal-dot">/</span>
+        <span>Gym</span>
+        <span class="signal-dot">/</span>
+        <span>Badminton</span>
+        <span class="signal-dot">/</span>
+        <span>Art</span>
+        <span class="signal-dot">/</span>
+        <span>Stage Performance</span>
+        <span class="signal-dot">/</span>
+        <span>Learning Code</span>
+        <span class="signal-dot">/</span>
+        <span>Video Editing</span>
+        <span class="signal-dot">/</span>
+        <span>JEE Prep</span>
+        <span class="signal-dot">/</span>
+        <span>Content Creation</span>
+        <span class="signal-dot">/</span>
+        <span>Gym</span>
+        <span class="signal-dot">/</span>
+        <span>Badminton</span>
+        <span class="signal-dot">//</span>
+        <span class="sig-chip">ID: SHLEN</span>
+        <span class="signal-dot">//</span>
+        <span class="sig-chip">ORIGIN: INDIA</span>
+      </div>
+    </section>
+
+    <section class="section depth-section" id="focus">
+      <div class="sec-head">
+        <span class="sec-num mono">001</span>
+        <h2 class="sec-title">Focus Deck</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="depth-layout">
+        <div class="depth-copy">
+          <p class="depth-lead">
+            I like building things that feel bold, clean, and fun to experience.
+          </p>
+          <p class="depth-body">
+            I mix creative instincts with practical execution. Some projects are content-first, some are visual
+            experiments, and some are pure learning builds, but all of them move me forward.
+          </p>
+          <div class="depth-tags">
+            <span class="tag-chip">Scroll Depth</span>
+            <span class="tag-chip">3D Panels</span>
+            <span class="tag-chip">Comic Framing</span>
+            <span class="tag-chip">Space Mood</span>
+          </div>
+        </div>
+
+        <div class="depth-stage">
+          <article class="depth-card panel depth-card-front">
+            <span class="depth-card-index mono">Chapter 01</span>
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1200&auto=format&fit=crop"
+              alt="Illustrated space console panel representing discipline, habit tracking, and orbit lines."
+              loading="lazy" />
+            <h3>Discipline Orbit</h3>
+            <p>Learning, training, editing, and studying all live on the same mission path.</p>
+          </article>
+
+          <article class="depth-card panel depth-card-mid">
+            <span class="depth-card-index mono">Chapter 02</span>
+            <img src="https://images.unsplash.com/photo-1622737133809-d95047b9e673?q=80&w=1200&auto=format&fit=crop"
+              alt="Illustrated sci-fi editing panel with a timeline, screen, and planetary elements." loading="lazy" />
+            <h3>Editor Energy</h3>
+            <p>Rhythm, pacing, color, and story are a big part of how I think about creative work.</p>
+          </article>
+
+          <article class="depth-card panel depth-card-back">
+            <span class="depth-card-index mono">Chapter 03</span>
+            <img src="https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1200&auto=format&fit=crop"
+              alt="Illustrated profile panel with a radar portrait and technical overlays." loading="lazy" />
+            <h3>Signal Identity</h3>
+            <p>The goal is not to look perfect. The goal is to keep leveling up in public and stay real.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="portal-banner panel-lite">
+        <span class="mono pb-tag">Interactive Experience</span>
+        <p>Explore the extended 3D version of this portfolio and project narrative.</p>
+        <a href="cosmic-3d.html" class="pb-link">Open 3D Portfolio Page</a>
+      </div>
+    </section>
+
+    <section class="section work work-hype" id="work">
+      <div class="sec-head">
+        <span class="sec-num mono">002</span>
+        <h2 class="sec-title">Grind Log</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="grind-hud panel">
+        <div class="grind-hud-copy">
+          <span class="mono gh-kicker">Mission Control // Live Feed</span>
+          <p>
+            Not a cute to-do list. This is my pressure-built operating system where creativity, discipline,
+            performance, and learning run in parallel every single day.
+          </p>
+          <div class="grind-ticker mono" aria-hidden="true">
+            <span>CREATIVE FORCE</span>
+            <span>DISCIPLINE ENGINE</span>
+            <span>MISSION ACTIVE</span>
+            <span>CREATIVE FORCE</span>
+            <span>DISCIPLINE ENGINE</span>
+            <span>MISSION ACTIVE</span>
+          </div>
+        </div>
+        <div class="grind-stats">
+          <div class="grind-stat panel-lite">
+            <span class="mono gs-num" data-val="9">00</span>
+            <span class="mono gs-label">Active Tracks</span>
+          </div>
+          <div class="grind-stat panel-lite">
+            <span class="mono gs-num" data-val="4">00</span>
+            <span class="mono gs-label">Core Logs</span>
+          </div>
+          <div class="grind-stat panel-lite">
+            <span class="mono gs-num" data-val="24">00</span>
+            <span class="mono gs-label">Daily Mission</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects">
+        <article class="proj-card featured reactive-card">
+          <div class="proj-vis">
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop"
+              alt="Faceless professional desk setup with coffee, notebook, and laptop in studio lighting."
+              loading="lazy" />
+            <div class="proj-scan" aria-hidden="true"></div>
+            <div class="proj-overlay mono">Main Quest / Ongoing</div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-meta">
+              <span class="mono">01</span>
+              <span class="mono muted">Core Mission</span>
+            </div>
+            <h3 class="proj-title">Multi-Skill Main Quest</h3>
+            <p class="proj-desc">
+              I am building an unfair mix: edits, stage confidence, fitness, deep study, and coding momentum,
+              all stacked into one growth machine.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">Growth</span>
+              <span class="ptag">Discipline</span>
+              <span class="ptag">Curiosity</span>
+            </div>
+            <div class="grind-meter" data-progress="96">
+              <div class="grind-meter-fill"></div>
+              <span class="mono gm-label">Mission Consistency 96%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card reactive-card">
+          <div class="proj-vis">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop"
+              alt="Faceless professional hands working on a laptop with modern office lighting." loading="lazy" />
+            <div class="proj-scan" aria-hidden="true"></div>
+            <div class="proj-overlay mono">Edit Lab</div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-meta">
+              <span class="mono">02</span>
+              <span class="mono muted">Creative Work</span>
+            </div>
+            <h3 class="proj-title">Cinematic Edit Engine</h3>
+            <p class="proj-desc">
+              I cut for impact. Rhythm, transitions, pacing, and emotional beats get engineered until every second
+              feels intentional.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">Editing</span>
+              <span class="ptag">Motion</span>
+              <span class="ptag">Story</span>
+            </div>
+            <div class="grind-meter" data-progress="88">
+              <div class="grind-meter-fill"></div>
+              <span class="mono gm-label">Creative Output 88%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card reactive-card">
+          <div class="proj-vis">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop"
+              alt="Faceless athlete training in a professional gym environment." loading="lazy" />
+            <div class="proj-scan" aria-hidden="true"></div>
+            <div class="proj-overlay mono">Creator Loop</div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-meta">
+              <span class="mono">03</span>
+              <span class="mono muted">Presence</span>
+            </div>
+            <h3 class="proj-title">Creator Signal Amplifier</h3>
+            <p class="proj-desc">
+              I test formats fast, ship experiments publicly, and optimize what connects without losing real voice.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">Creator</span>
+              <span class="ptag">Presence</span>
+              <span class="ptag">Experiment</span>
+            </div>
+            <div class="grind-meter" data-progress="82">
+              <div class="grind-meter-fill"></div>
+              <span class="mono gm-label">Creator Momentum 82%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj-card reactive-card">
+          <div class="proj-vis">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+              alt="Faceless professional workspace with planning notes and laptop representing structure and focus."
+              loading="lazy" />
+            <div class="proj-scan" aria-hidden="true"></div>
+            <div class="proj-overlay mono">Balance Test</div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-meta">
+              <span class="mono">04</span>
+              <span class="mono muted">Multi-Track</span>
+            </div>
+            <h3 class="proj-title">Chaos To Control Protocol</h3>
+            <p class="proj-desc">
+              JEE prep, gym, sport, performance, and code could explode into chaos. I turn that chaos into repeatable
+              structure.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">JEE</span>
+              <span class="ptag">Gym</span>
+              <span class="ptag">Learning</span>
+            </div>
+            <div class="grind-meter" data-progress="91">
+              <div class="grind-meter-fill"></div>
+              <span class="mono gm-label">Balance Stability 91%</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about about-hype" id="about">
+      <div class="sec-head">
+        <span class="sec-num mono">003</span>
+        <h2 class="sec-title">Profile File</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-stack">
+          <figure class="about-panel panel">
+            <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=800&auto=format&fit=crop"
+              alt="Faceless professional workspace with clean editorial styling." loading="lazy" />
+            <figcaption class="mono">Profile Signal // Real Frame</figcaption>
+          </figure>
+
+          <div class="av-data panel-lite mono">
+            <div class="av-datum"><span class="ad-key">Name</span><span>Shahez (Shlen)</span></div>
+            <div class="av-datum"><span class="ad-key">Origin</span><span>India</span></div>
+            <div class="av-datum"><span class="ad-key">Age</span><span>17</span></div>
+            <div class="av-datum"><span class="ad-key">Status</span><span>Multi-Grind</span></div>
+          </div>
+
+          <div class="profile-radar panel-lite" aria-hidden="true">
+            <span class="mono pr-label">Signal Strength</span>
+            <div class="pr-core"></div>
+            <div class="pr-ring pr-ring-a"></div>
+            <div class="pr-ring pr-ring-b"></div>
+            <div class="pr-sweep"></div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p class="about-bio">
+            I am <strong>Shahez</strong>, professionally known as <strong>Shlen</strong>. I focus on high-output
+            learning, disciplined execution, and real progress over perfection theater.
+          </p>
+          <p class="about-bio2">
+            This portfolio tracks my active build cycle across editing, performance, fitness, study, and programming.
+            Every chapter is about measurable growth and stronger creative control.
+          </p>
+
+          <div class="bio-ribbons mono">
+            <span>Editor</span>
+            <span>Creator</span>
+            <span>Athlete</span>
+            <span>Programmer</span>
+            <span>Performer</span>
+          </div>
+
+          <div class="skills">
+            <div class="skill-col panel-lite">
+              <h4 class="sk-head mono">Creative</h4>
+              <ul>
+                <li>Video Editing</li>
+                <li>Content Creation</li>
+                <li>Digital and Traditional Art</li>
+                <li>Stage Performance</li>
+              </ul>
+            </div>
+
+            <div class="skill-col panel-lite">
+              <h4 class="sk-head mono">Active</h4>
+              <ul>
+                <li>Gym Routine</li>
+                <li>Badminton</li>
+                <li>Gaming</li>
+                <li>Discipline Building</li>
+              </ul>
+            </div>
+
+            <div class="skill-col panel-lite">
+              <h4 class="sk-head mono">Learning</h4>
+              <ul>
+                <li>JEE Prep</li>
+                <li>Programming</li>
+                <li>Creative Experimentation</li>
+                <li>Infinite Learner Mindset</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="sec-head">
+        <span class="sec-num mono">004</span>
+        <h2 class="sec-title">Open Comms</h2>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="contact-inner">
+        <p class="contact-big">
+          Let us build, create, edit or just talk growth.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:notshlen@gmail.com" class="cl-item panel-lite">
+            <span class="cli-label mono">Email</span>
+            <span class="cli-val">notshlenhere@gmail.com</span>
+          </a>
+          <a href="https://instagram.com/notshlen" class="cl-item panel-lite" target="_blank" rel="noopener">
+            <span class="cli-label mono">Instagram</span>
+            <span class="cli-val">@notshlen</span>
+          </a>
+          <a href="mailto:notshlenhere@gmail.com" class="cl-item panel-lite">
+            <span class="cli-label mono">Let’s Connect</span>
+            <span class="cli-val">Email or Instagram DM</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="footer-logo mono">[ notshlen ]</span>
+    <span class="footer-copy mono">Built for the notshlen journey</span>
+    <a href="cosmic-3d.html" class="footer-portal mono">Open Cosmos</a>
+    <span class="footer-time mono" id="footerTime">00:00:00 UTC</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
