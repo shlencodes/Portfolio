@@ -239,13 +239,6 @@ window.addEventListener("mousemove", (event) => {
   pointer.y = (event.clientY / window.innerHeight) * 2 - 1;
 });
 
-window.addEventListener("touchmove", (event) => {
-  if (!event.touches || !event.touches.length) return;
-  const t = event.touches[0];
-  pointer.x = (t.clientX / window.innerWidth) * 2 - 1;
-  pointer.y = (t.clientY / window.innerHeight) * 2 - 1;
-}, { passive: true });
-
 const cameraState = {
   x: 0,
   y: 0.3,
@@ -326,24 +319,8 @@ function placeLabel(el, object3D, localOffset) {
   el.style.display = visible ? "block" : "none";
   if (!visible) return;
 
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  const isPhone = vw <= 680;
-  const padX = isPhone ? 10 : 16;
-  const padYTop = vw <= 420 ? 132 : (isPhone ? 108 : 16);
-  const padYBottom = isPhone ? 18 : 16;
-  const rect = el.getBoundingClientRect();
-  const halfW = Math.max(0, rect.width * 0.5);
-  const halfH = Math.max(0, rect.height * 0.5);
-  const minX = padX + halfW;
-  const maxX = vw - padX - halfW;
-  const minY = padYTop + halfH;
-  const maxY = vh - padYBottom - halfH;
-  const safeX = minX <= maxX ? Math.max(minX, Math.min(maxX, x)) : vw * 0.5;
-  const safeY = minY <= maxY ? Math.max(minY, Math.min(maxY, y)) : vh * 0.5;
-
-  el.style.left = `${safeX}px`;
-  el.style.top = `${safeY}px`;
+  el.style.left = `${x}px`;
+  el.style.top = `${y}px`;
   el.style.zIndex = `${((1 - projected.z) * 10000) | 0}`;
 }
 
@@ -417,10 +394,9 @@ function animate() {
     const el = labelEls[key];
     const eased = Math.max(0, Math.min(1, alpha));
     el.style.opacity = eased.toFixed(3);
-    const isPhone = window.innerWidth <= 680;
-    const scale = (isPhone ? 0.78 : 0.72) + eased * (isPhone ? 0.26 : 0.34);
-    const px = pointer.x * (isPhone ? 4.2 : 8);
-    const py = pointer.y * (isPhone ? 3.2 : 6);
+    const scale = 0.72 + eased * 0.34;
+    const px = pointer.x * 8;
+    const py = pointer.y * 6;
     el.style.transform = `translate(calc(-50% + ${px.toFixed(2)}px), calc(-50% + ${py.toFixed(2)}px)) scale(${scale.toFixed(3)})`;
   });
 
