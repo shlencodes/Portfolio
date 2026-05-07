@@ -48,7 +48,7 @@ body {
   font-family: var(--f-body);
   line-height: 1.6;
   min-height: 100vh;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 main,
@@ -1834,10 +1834,22 @@ main {
 }
 
 @media (max-width: 820px) {
+  :root {
+    --pad: clamp(0.9rem, 4.2vw, 1.1rem);
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .signal-strip {
     width: 100%;
     margin-left: 0;
     transform: none;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    z-index: 1;
   }
 
   .signal-track {
@@ -1860,6 +1872,8 @@ main {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.65rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.7rem;
   }
 
   .nav-links {
@@ -1883,8 +1897,24 @@ main {
     max-width: none;
   }
 
+  .hero-actions {
+    width: 100%;
+    gap: 0.55rem;
+  }
+
+  .hero-actions .cta-main,
+  .hero-actions .cta-ghost,
+  .hero-actions .cta-portal {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
   .hero-stage {
-    min-height: 24rem;
+    min-height: 22rem;
+    width: 100%;
+    margin-top: 0.9rem;
+    padding-top: 0.3rem;
+    align-items: flex-start;
   }
 
   .hero-poster {
@@ -1893,12 +1923,56 @@ main {
     bottom: auto;
     width: min(100%, 16rem);
     margin-top: 1rem;
-    margin-left: auto;
+    margin-inline: auto;
+  }
+
+  .work-ribbon {
+    inset-inline: 0.65rem;
+  }
+
+  .about-solar {
+    min-height: 90vh;
   }
 
   .projects,
   .skills {
     grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .section,
+  .footer,
+  .panel,
+  .panel-lite,
+  .proj-card,
+  .skill-col,
+  .metric,
+  .grind-stat,
+  .portal-banner,
+  .contact-panel,
+  .about-panel {
+    max-width: 100%;
+  }
+
+  .depth-stage,
+  .about-solar,
+  .proj-radar,
+  .balance-planet,
+  .work-ribbon {
+    display: none;
+  }
+
+  .proj-card,
+  .proj-meta,
+  .grind-hud,
+  .about-copy,
+  .contact-copy {
+    overflow: hidden;
+  }
+
+  .proj-card:hover,
+  .work-hype .proj-card:hover {
+    transform: none;
   }
 
   .grind-stats {
@@ -1925,8 +1999,24 @@ main {
     font-size: 15px;
   }
 
+  .nav-logo {
+    font-size: 0.77rem;
+    letter-spacing: 0.13em;
+  }
+
+  .nav-links {
+    gap: 0.48rem;
+    scrollbar-width: thin;
+  }
+
+  .nav-link {
+    padding: 0.38rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
   .hero {
-    padding-top: 7rem;
+    padding-top: 7.3rem;
+    gap: 1rem;
   }
 
   .hero-sub {
@@ -1938,11 +2028,32 @@ main {
   }
 
   .hero-3d-shell {
-    width: min(100%, 23rem);
+    width: min(100%, 21.5rem);
+    padding: 0.85rem;
+  }
+
+  .hero-stage {
+    min-height: auto;
+    display: grid;
+    gap: 0.85rem;
+    justify-items: center;
   }
 
   .signal-track {
     font-size: 0.9rem;
+    animation-duration: 22s;
+    gap: 0.55rem;
+    transform: none;
+    line-height: 1.2;
+  }
+
+  .signal-track > span,
+  .signal-track > a {
+    padding: 0.22rem 0.36rem;
+    font-size: 0.82em;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    line-height: 1.15;
   }
 
   .sec-head {
@@ -1959,6 +2070,56 @@ main {
   .contact-links {
     width: 100%;
   }
+
+  .about-grid,
+  .contact-inner {
+    gap: 1.15rem;
+  }
+
+  .grind-hud,
+  .proj-meta,
+  .skill-col,
+  .about-panel,
+  .contact-panel,
+  .portal-banner {
+    padding: 0.85rem;
+  }
+
+  .proj-vis {
+    aspect-ratio: 16 / 10;
+  }
+
+  .work-ribbon {
+    inset-inline: 0.45rem;
+    top: 0.45rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+
+  .hero-actions .cta-main,
+  .hero-actions .cta-ghost,
+  .hero-actions .cta-portal {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-poster {
+    width: min(100%, 18rem);
+    margin-top: 0.35rem;
+  }
+
+  .hero-title,
+  .sec-title,
+  .proj-title,
+  .contact-big,
+  .depth-lead {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1966,6 +2127,10 @@ main {
   .section,
   .footer {
     padding-inline: 0.8rem;
+  }
+
+  .hero {
+    padding-top: 7.6rem;
   }
 
   .hero-title {
@@ -1981,5 +2146,90 @@ main {
 
   .portal-banner {
     padding: 0.8rem;
+  }
+
+  .hero-stage {
+    min-height: 19rem;
+  }
+
+  .hero-poster {
+    width: 100%;
+  }
+
+  .hero-3d-shell {
+    width: 100%;
+  }
+
+  .nav-links {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .signal-strip::before,
+  .signal-strip::after {
+    display: none;
+  }
+
+  .signal-track {
+    padding: 0.72rem 0;
+    animation: trackFloat 24s linear infinite;
+    line-height: 1.15;
+    gap: 0.45rem;
+  }
+
+  .signal-track > span,
+  .signal-track > a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    line-height: 1.1;
+  }
+
+  .depth-card,
+  .proj-card,
+  .skill-col,
+  .contact-panel,
+  .about-panel,
+  .portal-banner,
+  .metric,
+  .grind-stat {
+    border-width: 2px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.38);
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    font-size: 14px;
+  }
+
+  .hero,
+  .section,
+  .footer {
+    padding-inline: 0.65rem;
+  }
+
+  .nav {
+    gap: 0.45rem;
+  }
+
+  .nav-logo {
+    font-size: 0.71rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-link {
+    font-size: 0.68rem;
+    padding: 0.33rem 0.42rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 10vw, 2.2rem);
+  }
+
+  .hero-stage {
+    min-height: 17.8rem;
+  }
+
+  .hero-actions {
+    gap: 0.45rem;
   }
 }
