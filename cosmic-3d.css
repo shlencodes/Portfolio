@@ -29,6 +29,39 @@ body {
   overflow-x: hidden;
 }
 
+@media (min-width: 1024px) {
+  .cosmo-nav {
+    top: 1.2rem;
+    left: 1.2rem;
+    right: 1.2rem;
+  }
+
+  .cn-home,
+  .cn-jump {
+    font-size: 0.76rem;
+    padding: 0.45rem 0.72rem;
+  }
+
+  .planet-label {
+    max-width: min(34vw, 24rem);
+    min-width: 12.5rem;
+    padding: 0.22rem 0.3rem;
+  }
+
+  .planet-label h2 {
+    font-size: clamp(1rem, 1.35vw, 1.4rem);
+  }
+
+  .planet-label p {
+    font-size: clamp(0.8rem, 0.95vw, 1rem);
+  }
+
+  .end-portal {
+    width: min(90vw, 36rem);
+    padding: 1.1rem;
+  }
+}
+
 #cosmosCanvas {
   position: fixed;
   inset: 0;
@@ -110,11 +143,7 @@ body {
   transform-origin: center;
   transition: opacity 0.22s ease, transform 0.22s ease;
   text-align: center;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  hyphens: auto;
   filter: drop-shadow(0 0 10px rgba(255, 188, 114, 0.36)) drop-shadow(0 0 18px rgba(116, 178, 255, 0.28));
-  will-change: transform, opacity, left, top;
 }
 
 .pl-kicker {
@@ -222,26 +251,21 @@ body {
   }
 
   .planet-label {
-    width: min(60vw, 16rem);
+    width: min(56vw, 16rem);
     max-width: 84vw;
   }
 }
 
 @media (max-width: 680px) {
-  .scroll-zone {
-    min-height: 100vh;
-  }
-
   .planet-label {
-    width: min(78vw, 14rem);
+    width: min(74vw, 14rem);
     max-width: 88vw;
     min-width: 0;
-    padding: 0.08rem 0.1rem;
-    text-wrap: pretty;
+    padding: 0.1rem 0.15rem;
   }
 
   .zone-hint {
-    top: 6.7rem;
+    top: 5.9rem;
     font-size: 0.66rem;
     max-width: calc(100vw - 1.5rem);
     text-wrap: balance;
@@ -251,16 +275,6 @@ body {
     width: min(94vw, 23rem);
     padding: 0.8rem;
   }
-
-  .ep-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .ep-btn {
-    width: 100%;
-    text-align: center;
-  }
 }
 
 @media (max-width: 420px) {
@@ -268,10 +282,6 @@ body {
     flex-direction: column;
     align-items: flex-start;
     pointer-events: none;
-    top: 0.55rem;
-    left: 0.55rem;
-    right: 0.55rem;
-    gap: 0.4rem;
   }
 
   .cn-home,
@@ -279,74 +289,13 @@ body {
     pointer-events: auto;
     width: 100%;
     text-align: center;
-    font-size: 0.63rem;
-    letter-spacing: 0.06em;
-    padding: 0.34rem 0.45rem;
-    border-width: 2px;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.38);
   }
 
   .planet-label h2 {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
   }
 
   .planet-label p {
-    font-size: 0.71rem;
-  }
-
-  .planet-label {
-    width: min(90vw, 13.4rem);
-    max-width: 92vw;
-  }
-
-  .planet-ui {
-    z-index: 18;
-  }
-
-  .pl-kicker {
-    font-size: 0.61rem;
-  }
-
-  .zone-hint {
-    top: 6.2rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-  }
-
-  .end-portal {
-    width: min(95vw, 21rem);
-    padding: 0.7rem;
-    border-width: 2px;
-    box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.4), 0 0 18px rgba(112, 178, 255, 0.26);
-  }
-
-  .end-portal h3 {
-    font-size: clamp(0.95rem, 5.5vw, 1.2rem);
-  }
-
-  .ep-btn {
-    border-width: 2px;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.34);
-    font-size: 0.64rem;
-    letter-spacing: 0.08em;
-    padding: 0.38rem 0.5rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .planet-label {
-    width: min(92vw, 12.6rem);
-  }
-
-  .planet-label h2 {
-    font-size: 0.77rem;
-  }
-
-  .planet-label p {
-    font-size: 0.68rem;
-  }
-
-  .zone-hint {
-    max-width: calc(100vw - 1rem);
+    font-size: 0.74rem;
   }
 }
