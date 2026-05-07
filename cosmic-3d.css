@@ -143,7 +143,12 @@ body {
   transform-origin: center;
   transition: opacity 0.22s ease, transform 0.22s ease;
   text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  text-wrap: pretty;
   filter: drop-shadow(0 0 10px rgba(255, 188, 114, 0.36)) drop-shadow(0 0 18px rgba(116, 178, 255, 0.28));
+  will-change: left, top, transform, opacity;
 }
 
 .pl-kicker {
@@ -257,15 +262,19 @@ body {
 }
 
 @media (max-width: 680px) {
+  .scroll-zone {
+    min-height: 100vh;
+  }
+
   .planet-label {
-    width: min(74vw, 14rem);
-    max-width: 88vw;
+    width: min(78vw, 14rem);
+    max-width: 90vw;
     min-width: 0;
     padding: 0.1rem 0.15rem;
   }
 
   .zone-hint {
-    top: 5.9rem;
+    top: 6.5rem;
     font-size: 0.66rem;
     max-width: calc(100vw - 1.5rem);
     text-wrap: balance;
@@ -292,10 +301,33 @@ body {
   }
 
   .planet-label h2 {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
   }
 
   .planet-label p {
-    font-size: 0.74rem;
+    font-size: 0.71rem;
+  }
+
+  .planet-label {
+    width: min(90vw, 13.2rem);
+    max-width: 92vw;
+  }
+
+  .zone-hint {
+    top: 6.1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .planet-label {
+    width: min(92vw, 12.4rem);
+  }
+
+  .planet-label h2 {
+    font-size: 0.77rem;
+  }
+
+  .planet-label p {
+    font-size: 0.68rem;
   }
 }
